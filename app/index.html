@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/app/"> <meta charset="UTF-8">
+  <base href="/app/"> 
+
+  <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Yih - Sussurros Invisíveis">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Yih">
+  
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <link rel="icon" type="image/png" href="../yihbranco.png"/>
 
   <title>Yih | Entrando...</title>
+  
   <link rel="manifest" href="manifest.json">
 
   <style>
     body {
-      background-color: #0a0a0a; /* Fundo idêntico à Landing Page */
+      background-color: #0a0a0a;
       margin: 0;
       padding: 0;
       overflow: hidden;
@@ -27,23 +31,18 @@
       height: 100vh;
       width: 100vw;
     }
-
     .loader-container {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
-    /* Logo com animação de pulso */
     .loader-logo {
       height: 80px;
       width: auto;
       margin-bottom: 20px;
       animation: pulse 2s infinite ease-in-out;
     }
-
-    /* Barra de progresso sutil */
     .progress-bar {
       width: 150px;
       height: 3px;
@@ -52,7 +51,6 @@
       overflow: hidden;
       position: relative;
     }
-
     .progress-fill {
       width: 50%;
       height: 100%;
@@ -60,19 +58,15 @@
       position: absolute;
       animation: loading 1.5s infinite linear;
     }
-
     @keyframes pulse {
       0% { transform: scale(0.95); opacity: 0.5; }
       50% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 15px #9d4edd); }
       100% { transform: scale(0.95); opacity: 0.5; }
     }
-
     @keyframes loading {
       0% { left: -100%; }
       100% { left: 100%; }
     }
-
-    /* Texto sutil */
     .loading-text {
       color: #333;
       font-family: 'Poppins', sans-serif;
@@ -86,11 +80,9 @@
 <body>
   <div class="loader-container">
     <img src="../yihbranco.png" alt="Yih Logo" class="loader-logo">
-    
     <div class="progress-bar">
       <div class="progress-fill"></div>
     </div>
-    
     <div class="loading-text">Buya Digitais</div>
   </div>
 
