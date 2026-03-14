@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yih | Sussurros Invisíveis</title>
+    
+    <title>Yih | Sussurros Invisíveis - Comunicação Privada e Segura</title>
+    <meta name="description" content="O Yih é um aplicativo de mensagens efêmeras focado em total privacidade. Envie sussurros que não deixam rastros. Desenvolvido por Buya Serviços Digitais.">
+    <meta name="keywords" content="Yih, Mensagens Privadas, Sussurro, Chat Efêmero, Privacidade, Buya Serviços Digitais, Criptografia, App de Chat">
+    <meta name="author" content="Buya Serviços Digitais">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Yih | Sussurros Invisíveis">
+    <meta property="og:description" content="Comunicação instantânea onde sua identidade é protegida. Fale o que quiser, para quem quiser.">
+    <meta property="og:image" content="yihbranco.png">
+    <meta property="og:type" content="website">
+    
     <link rel="icon" type="image/png" href="yihbranco.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         :root {
             --primary: #9d4edd;
@@ -15,46 +27,129 @@
             --text: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--dark); color: var(--text); overflow-x: hidden; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        body { 
+            background-color: var(--dark); 
+            color: var(--text); 
+            overflow-x: hidden; 
+        }
 
         .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100vh;
             background: radial-gradient(circle at 50% 50%, #240046 0%, #0a0a0a 70%);
             z-index: -1;
         }
 
-        /* HEADER RESPONSIVO */
-        header { padding: 30px 10%; display: flex; justify-content: flex-start; }
-        .logo img { height: 60px; width: auto; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* HERO SECTION */
-        .hero {
-            height: 80vh; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; text-align: center;
+        header { 
+            padding: 30px 10%; 
+            display: flex; 
+            justify-content: flex-start; 
         }
 
-        .hero h1 { font-size: 4.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 1.4rem; color: #aaa; max-width: 700px; margin-bottom: 40px; }
+        .logo img { 
+            height: 60px; 
+            width: auto; 
+        }
+
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        .hero {
+            height: 80vh; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+        }
+
+        .hero h1 { 
+            font-size: 4.5rem; 
+            font-weight: 800; 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+        }
+
+        .hero h1 span { 
+            color: var(--primary); 
+        }
+
+        .hero p { 
+            font-size: 1.4rem; 
+            color: #aaa; 
+            max-width: 700px; 
+            margin-bottom: 40px; 
+        }
+
+        /* Grupo de botões centralizado */
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
         .btn-download {
-            background: var(--primary); color: white; padding: 18px 50px;
-            border-radius: 12px; text-decoration: none; font-weight: 700;
-            font-size: 1.2rem; transition: 0.3s;
+            background: var(--primary); 
+            color: white; 
+            padding: 18px 50px;
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: 700;
+            font-size: 1.2rem; 
+            transition: 0.3s;
             display: inline-block;
         }
 
-        .btn-download:hover { transform: scale(1.05); background: #b24bf3; }
+        .btn-download:hover { 
+            transform: scale(1.05); 
+            background: #b24bf3; 
+        }
 
-        /* FEATURES GRID */
-        .features { padding: 60px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .btn-web {
+            background: transparent; 
+            color: var(--primary); 
+            padding: 18px 50px;
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: 700;
+            font-size: 1.2rem; 
+            border: 2px solid var(--primary);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-web:hover { 
+            background: rgba(157, 78, 221, 0.1);
+            transform: scale(1.05); 
+        }
+
+        .features { 
+            padding: 60px 0; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
 
         .card {
-            background: var(--card); padding: 40px; border-radius: 24px;
-            border: 1px solid #222; text-align: left;
+            background: var(--card); 
+            padding: 40px; 
+            border-radius: 24px;
+            border: 1px solid #222; 
+            text-align: left;
         }
 
         .card i { color: var(--primary); margin-bottom: 20px; }
@@ -63,27 +158,64 @@
 
         .privacy-box {
             background: linear-gradient(90deg, #1a1a1a, #0a0a0a);
-            padding: 60px 20px; border-radius: 30px; border-left: 5px solid var(--primary);
-            margin: 60px 0; text-align: center;
+            padding: 60px 20px; 
+            border-radius: 30px; 
+            border-left: 5px solid var(--primary);
+            margin: 60px 0; 
+            text-align: center;
         }
 
-        footer { padding: 40px; border-top: 1px solid #222; text-align: center; color: #444; font-size: 0.9rem; }
+        footer { 
+            padding: 40px; 
+            border-top: 1px solid #222; 
+            text-align: center; 
+            color: #444; 
+            font-size: 0.9rem; 
+        }
 
         /* --- ADAPTAÇÃO MOBILE --- */
         @media (max-width: 768px) {
-            header { justify-content: center; padding: 20px 0; }
+            header { 
+                justify-content: center; 
+                padding: 20px 0; 
+            }
+
             .logo img { height: 50px; }
 
-            .hero { height: auto; padding: 60px 0; }
-            .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
-            .hero p { font-size: 1.1rem; margin-bottom: 30px; }
+            .hero { 
+                height: auto; 
+                padding: 60px 0; 
+            }
+
+            .hero h1 { 
+                font-size: 2.8rem; 
+                margin-bottom: 15px; 
+            }
+
+            .hero p { 
+                font-size: 1.1rem; 
+                margin-bottom: 30px; 
+            }
             
-            .btn-download { width: 100%; text-align: center; padding: 18px 20px; }
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-download, .btn-web { 
+                width: 100%; 
+                text-align: center; 
+                padding: 18px 20px; 
+            }
 
             .features { padding: 40px 0; }
             .card { padding: 30px; }
             
-            .privacy-box { padding: 40px 20px; border-left: none; border-top: 5px solid var(--primary); }
+            .privacy-box { 
+                padding: 40px 20px; 
+                border-left: none; 
+                border-top: 5px solid var(--primary); 
+            }
             .privacy-box h2 { font-size: 1.5rem; }
         }
     </style>
@@ -102,7 +234,11 @@
         <section class="hero">
             <h1>O Segredo em forma de <span>Sussurro</span>.</h1>
             <p>Comunicação instantânea onde sua identidade é protegida e suas mensagens são efêmeras. Fale o que quiser, para quem quiser.</p>
-            <a href="https://github.com/at-henr/sitetemporario/releases/download/beta/yihchat-beta.apk" class="btn-download">Baixar o Beta</a>
+            
+            <div class="cta-group">
+                <a href="https://github.com/at-henr/sitetemporario/releases/download/beta/yihchat-beta.apk" class="btn-download">Baixar o Beta</a>
+                <a href="./app/index.html" class="btn-web">Entrar no Web</a>
+            </div>
         </section>
 
         <section class="features">
