@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yih | Sussurros Invisíveis</title>
+    <link rel="icon" type="image/png" href="yihbranco.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #9d4edd;
+            --dark: #0a0a0a;
+            --card: #151515;
+            --text: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--dark); color: var(--text); overflow-x: hidden; }
+
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
+            background: radial-gradient(circle at 50% 50%, #240046 0%, #0a0a0a 70%);
+            z-index: -1;
+        }
+
+        header { padding: 30px 10%; }
+        /* Logo ajustado para usar a sua imagem */
+        .logo img { height: 60px; width: auto; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .hero {
+            height: 80vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center;
+        }
+
+        .hero h1 { font-size: 4.5rem; font-weight: 800; line-height: 1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.4rem; color: #aaa; max-width: 700px; margin-bottom: 40px; }
+
+        .btn-download {
+            background: var(--primary); color: white; padding: 18px 50px;
+            border-radius: 12px; text-decoration: none; font-weight: 700;
+            font-size: 1.2rem; transition: 0.3s;
+        }
+
+        .btn-download:hover { transform: scale(1.05); background: #b24bf3; }
+
+        .features { padding: 100px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+
+        .card {
+            background: var(--card); padding: 40px; border-radius: 24px;
+            border: 1px solid #222; text-align: left;
+        }
+
+        .card i { color: var(--primary); margin-bottom: 20px; }
+        .card h3 { font-size: 1.6rem; margin-bottom: 15px; }
+        .card p { color: #888; line-height: 1.6; }
+
+        .privacy-box {
+            background: linear-gradient(90deg, #1a1a1a, #0a0a0a);
+            padding: 60px; border-radius: 30px; border-left: 5px solid var(--primary);
+            margin: 100px 0; text-align: center;
+        }
+
+        footer { padding: 60px; border-top: 1px solid #222; text-align: center; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-bg"></div>
+
+    <header class="container">
+        <div class="logo">
+            <img src="yihbranco.png" alt="Yih Logo">
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>O Segredo em forma de <span>Sussurro</span>.</h1>
+            <p>Comunicação instantânea onde sua identidade é protegida e suas mensagens são efêmeras. Fale o que quiser, para quem quiser.</p>
+            <a href="https://hiy.com.br/aplicativo" class="btn-download">Baixar o Beta</a>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <i data-lucide="shield-alert" size="40"></i>
+                <h3>Privacidade Blindada</h3>
+                <p>Nossa arquitetura foi desenhada para que ninguém, além de você e seu contato, tenha acesso ao que foi dito.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="zap" size="40"></i>
+                <h3>Entrega Imediata</h3>
+                <p>Esqueça o delay. Nosso sistema de entrega prioritária garante que você seja notificado no exato segundo do envio.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="ghost" size="40"></i>
+                <h3>Rastro Zero</h3>
+                <p>O Yih foca no agora. Mensagens diretas, rápidas e sem armazenamento desnecessário em seu dispositivo.</p>
+            </div>
+        </section>
+
+        <section class="privacy-box">
+            <h2>Sua vida não é negócio de ninguém.</h2>
+            <p style="color: #aaa; margin-top: 10px;">Não rastreamos, não vendemos e não monitoramos. A Buya entrega tecnologia, você entrega a mensagem.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Buya Serviços Digitais. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
