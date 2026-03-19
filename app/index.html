@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <base href="/app/"> 
+  <base href="/app/">
 
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Yih - Sussurros Invisíveis">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
+  <!-- 🔥 SEO BÁSICO -->
+  <title>Yih Chat - Melhor Chat Anônimo Online | Sussurros Invisíveis</title>
+
+  <meta name="description" content="Yih Chat é um dos melhores chats anônimos online para conversar, fazer novas conexões e trocar mensagens privadas com segurança. Plataforma moderna, rápida e segura.">
+
+  <meta name="keywords" content="chat online, chat anônimo, melhor chat, chat grátis, chat privado, conversar online, bate papo, chat seguro, yih chat">
+
+  <meta name="author" content="Yih App">
+
+  <!-- 🔥 SOCIAL / GOOGLE -->
+  <meta property="og:title" content="Yih Chat - Melhor Chat Anônimo Online">
+  <meta property="og:description" content="Entre agora no melhor chat anônimo e converse com pessoas em tempo real.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../yihbranco.png">
+
+  <!-- 🔥 MOBILE -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Yih">
-  
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <meta name="apple-mobile-web-app-title" content="Yih Chat">
 
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <link rel="icon" type="image/png" href="../yihbranco.png"/>
 
-  <title>Yih | Entrando...</title>
-  
   <link rel="manifest" href="manifest.json">
+
+  <!-- 🔥 SEO EXTRA (leve, sem spam) -->
+  <meta name="robots" content="index, follow">
 
   <style>
     body {
@@ -76,10 +91,48 @@
       text-transform: uppercase;
     }
   </style>
+
+  <!-- 🔥 BLOQUEIO DE NOTIFICAÇÕES (HOTFIX SEM BUILD) -->
+  <script>
+    (function () {
+      try {
+        if ("Notification" in window) {
+          console.log("🔕 Notificações desativadas (modo seguro)");
+
+          Notification.requestPermission = function (callback) {
+            console.warn("🚫 Permissão de notificação bloqueada");
+
+            const result = Promise.resolve("denied");
+
+            if (callback) result.then(callback);
+
+            return result;
+          };
+        }
+
+        if ('serviceWorker' in navigator) {
+          const originalRegister = navigator.serviceWorker.register;
+
+          navigator.serviceWorker.register = function () {
+            console.warn("🚫 Service Worker Firebase bloqueado");
+            return Promise.resolve({
+              installing: null,
+              waiting: null,
+              active: null
+            });
+          };
+        }
+      } catch (e) {
+        console.error("Erro ao aplicar bloqueio:", e);
+      }
+    })();
+  </script>
+
 </head>
+
 <body>
   <div class="loader-container">
-    <img src="../yihbranco.png" alt="Yih Logo" class="loader-logo">
+    <img src="../yihbranco.png" alt="Yih Chat Logo" class="loader-logo">
     <div class="progress-bar">
       <div class="progress-fill"></div>
     </div>
