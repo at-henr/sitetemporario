@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/app/"> 
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -10,15 +10,15 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Yih">
-  
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <link rel="icon" type="image/png" href="../yihbranco.png"/>
+  <link rel="icon" type="image/png" href="yihbranco.png">
 
   <title>Yih | Entrando...</title>
-  
   <link rel="manifest" href="manifest.json">
 
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+  <script src="assets/packages/zego_express_engine/assets/zego-express-flutter-webrtc.js"></script>
   <style>
     body {
       background-color: #0a0a0a;
@@ -76,16 +76,53 @@
       text-transform: uppercase;
     }
   </style>
-</head>
-<body>
-  <div class="loader-container">
-    <img src="../yihbranco.png" alt="Yih Logo" class="loader-logo">
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
-    <div class="loading-text">Buya Digitais</div>
-  </div>
 
-  <script src="flutter_bootstrap.js" async></script>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <style id="splash-screen-style">
+    html {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      background-color: #09090B;
+      background-size: 100% 100%;
+    }
+
+    .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <script id="splash-screen-script">
+    function removeSplashFromWeb() {
+      document.getElementById("splash")?.remove();
+      document.getElementById("splash-branding")?.remove();
+      document.body.style.background = "transparent";
+    }
+  </script>
+</head>
+
+<body>
+<picture id="splash">
+  <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
+  <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+  <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+</picture>
+
+<script src="flutter_bootstrap.js" async=""></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('firebase-messaging-sw.js');
+    });
+  }
+</script>
 </body>
 </html>
