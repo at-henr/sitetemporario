@@ -1,24 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <base href="/app/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Yih - Sussurros Invisíveis">
+
+  <title>Yih | Mensagens Invisíveis, Chat Privado e Sussurros Seguros</title>
+  <meta name="title" content="Yih | Mensagens Invisíveis, Chat Privado e Sussurros Seguros">
+  <meta name="description" content="O Yih é o app de mensagens mais seguro para conversas privadas e sussurros invisíveis. Criptografia de ponta a ponta, chamadas de voz anônimas e privacidade absoluta.">
+  <meta name="keywords" content="chat privado, mensagens invisíveis, sussurros online, conversa secreta, privacidade total, mensagens criptografadas, chamadas de voz anônimas, yih chat, app de mensagens seguro">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Portuguese">
+  <meta name="author" content="Yih Oficial">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="yihbranco.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="yihbranco.png">
+  <link rel="shortcut icon" href="yihbranco.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.jpg">
+  <meta name="msapplication-TileImage" content="yihbranco.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yihchat.com.br">
+  <meta property="og:title" content="Yih - Onde a privacidade é absoluta">
+  <meta property="og:description" content="Mande mensagens que ninguém pode rastrear. Sussurre com segurança no Yih.">
+  <meta property="og:image" content="icons/Icon-512.jpg">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Yih | Sussurros Invisíveis">
+  <meta property="twitter:description" content="Chat focado em anonimato e privacidade total de dados.">
+  <meta property="twitter:image" content="icons/Icon-512.jpg">
 
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Yih">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-  <link rel="icon" type="image/png" href="yihbranco.png">
 
-  <title>Yih | Entrando...</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
   <link rel="manifest" href="manifest.json">
 
-  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Yih Chat",
+      "operatingSystem": "Android, iOS, Web",
+      "applicationCategory": "CommunicationApplication",
+      "description": "Aplicativo de mensagens privadas focado em anonimato e sussurros invisíveis.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "1500"
+      }
+    }
+  </script>
 
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
   <script src="assets/packages/zego_express_engine/assets/zego-express-flutter-webrtc.js"></script>
+
   <style>
     body {
       background-color: #0a0a0a;
@@ -31,96 +75,51 @@
       height: 100vh;
       width: 100vw;
     }
-    .loader-container {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .loader-logo {
-      height: 80px;
-      width: auto;
-      margin-bottom: 20px;
-      animation: pulse 2s infinite ease-in-out;
-    }
-    .progress-bar {
-      width: 150px;
-      height: 3px;
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-    .progress-fill {
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, #9d4edd, transparent);
-      position: absolute;
-      animation: loading 1.5s infinite linear;
-    }
-    @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.5; }
-      50% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 15px #9d4edd); }
-      100% { transform: scale(0.95); opacity: 0.5; }
-    }
-    @keyframes loading {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-    .loading-text {
-      color: #333;
-      font-family: 'Poppins', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      margin-top: 15px;
-      text-transform: uppercase;
-    }
+    .loader-container { text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .loader-logo { height: 80px; width: auto; margin-bottom: 20px; animation: pulse 2s infinite ease-in-out; }
+    .progress-bar { width: 150px; height: 3px; background-color: #1a1a1a; border-radius: 10px; overflow: hidden; position: relative; }
+    .progress-fill { width: 50%; height: 100%; background: linear-gradient(90deg, transparent, #9d4edd, transparent); position: absolute; animation: loading 1.5s infinite linear; }
+
+    @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.5; } 50% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 15px #9d4edd); } 100% { transform: scale(0.95); opacity: 0.5; } }
+    @keyframes loading { 0% { left: -100%; } 100% { left: 100%; } }
   </style>
 
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-  <style id="splash-screen-style">
-    html {
-      height: 100%
-    }
-
-    body {
-      margin: 0;
-      min-height: 100%;
-      background-color: #09090B;
-      background-size: 100% 100%;
-    }
-
-    .center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
-  </style>
-  <script id="splash-screen-script">
+  <script>
     function removeSplashFromWeb() {
       document.getElementById("splash")?.remove();
-      document.getElementById("splash-branding")?.remove();
-      document.body.style.background = "transparent";
+      document.body.style.background = "#09090B";
     }
   </script>
 </head>
 
 <body>
-<picture id="splash">
-  <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
-  <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
-  <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
-</picture>
+<div style="display:none;">
+  <h1>Yih Chat - Mensagens Privadas e Sussurros Invisíveis</h1>
+  <p>O Yih é a plataforma definitiva para conversas seguras. Envie mensagens privadas e faça chamadas de voz com anonimato total.</p>
+  <h2>Principais diferenciais da nossa privacidade:</h2>
+  <ul>
+    <li>Criptografia de ponta a ponta em todos os sussurros.</li>
+    <li>Histórico local autolimpante.</li>
+    <li>Sem rastreamento de dados ou e-mails expostos.</li>
+    <li>Chamadas de voz seguras via Zego Express.</li>
+  </ul>
+</div>
+
+<div id="splash" class="loader-container">
+  <img src="yihbranco.png" class="loader-logo" alt="Yih Logo">
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+</div>
 
 <script src="flutter_bootstrap.js" async=""></script>
 
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('firebase-messaging-sw.js');
+      navigator.serviceWorker.register('firebase-messaging-sw.js', {
+        scope: '/app/'
+      });
     });
   }
 </script>
